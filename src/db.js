@@ -96,7 +96,7 @@ function validateOptionsExist(options) {
 
 function validateIds(options) {
 	validateOptionsExist(options)
-	if (!options.id && !options.ids) throw new Error('Must provide options.ids')
+	if ((!options.id && !options.ids) && (!options.query_key && !options.WebEnv)) throw new Error('Must provide options.ids or options.WebEnv');
 }
 
 function validateDbFrom(options) {
